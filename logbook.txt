@@ -3,6 +3,8 @@ npm init -y
 npm i express
 sudo lsof -i -P -n | grep LISTEN
 sudo npm i -g nodemon
+npx express-generator
+
 
 2. files description
 index.js: the entry point file. 'node index.js'
