@@ -39,3 +39,7 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+// #######################################
+// ####Below Is Self Defined Functions####
+// #######################################
