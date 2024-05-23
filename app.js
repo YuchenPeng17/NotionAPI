@@ -14,6 +14,15 @@ var bodyParser = require('body-parser')
 require('dotenv').config();
 var session = require('express-session')
 // #####END ADD#####
+// #####I ADD#####
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(session({
+  secret: 'NotionAPI',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false },
+}))
+// #####END ADD#####
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -43,14 +52,4 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
-// #####I ADD#####
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(session({
-  secret: 'NotionAPI',
-  resave: false,
-  saveUninitialized: true,
-  cookie: { secure: true }
-}))
-// #####END ADD#####
 module.exports = app;
