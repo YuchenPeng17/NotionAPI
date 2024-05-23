@@ -4,8 +4,20 @@ npm i express
 sudo lsof -i -P -n | grep LISTEN
 sudo npm i -g nodemon
 npx express-generator
+"type": "module"
+
+
 
 2. files description
 app.js: the entry point file. 'node index.js'
 
 3. Middleware 
+npm i body-parser
+
+4. Notion API
+npm install @notionhq/client
+secret_DMgbUb9egs9Vsh9WXgt6HoTfehLOjfDUTsLv1xLJqWU
+de3d702371484678bbc2a8f404d2c697
+
+5. Express Session
+npm install express-session

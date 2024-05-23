@@ -9,6 +9,12 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+// #####I ADD#####
+var bodyParser = require('body-parser')
+require('dotenv').config();
+var session = require('express-session')
+// #####END ADD#####
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -38,8 +44,13 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+// #####I ADD#####
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(session({
+  secret: 'NotionAPI',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: true }
+}))
+// #####END ADD#####
 module.exports = app;
-
-// #######################################
-// ####Below Is Self Defined Functions####
-// #######################################
